@@ -42,13 +42,11 @@ Note: cut-off is set for **E-value 1e-5**. If you want to change it, just modify
 
 ### 3.2 Run script that unifies results
 ```
-
+python 3 virulence_annotation.py /path/to/directory
 ```
 
 ### Output files:
-- counts, presence/absence (PA) and relative abundance table
-
-
+- counts table with Virulence Factor per genome
 
 ### <a name="references"></a>References
 
