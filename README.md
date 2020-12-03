@@ -37,13 +37,13 @@ Annotated genomes (in Faa format) in a single directory.
 ### 3.1 Perform a blastp against the database with all genomes
 ```
 #In the folder with the genomes (Faa format):
-for i in *.faa; do blastp -query $i -db VFDB_setB_pro.fas -out ${i%.*}_merops.txt -evalue 1E-5 -outfmt 6 -num_threads 8; done
+for i in *.faa; do blastp -query $i -db VFDB_setB_pro.fas -out ${i%.*}_vfblastp.txt -evalue 1E-5 -outfmt 6 -num_threads 8; done
 ```
 Note: cut-off is set for **E-value 1e-5**. If you want to change it, just modify it in the above command.
 
 ### 3.2 Run script that unifies results
 ```
-python 3 virulence_annotation.py /path/to/directory
+python3 virulence_annotation.py /fullpath/to/directory
 ```
 
 ### Output files:
