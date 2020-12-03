@@ -9,7 +9,8 @@ A tutorial on how to annotate genomes with virulence factors.
 * [Author - contact](#author---contact)
 
 ## 1. <a name="tool"></a>Workflow description
-
+This a small pipeline to annotate bacterial genomes regarding virulence factors. \
+The database in use is the following: http://www.mgc.ac.cn/VFs/main.htm
 
 
 ## 2. <a name="installation"></a>Installation
@@ -38,7 +39,7 @@ Annotated genomes (in Faa format) in a single directory.
 #In the folder with the genomes (Faa format):
 for i in *.faa; do blastp -query $i -db VFDB_setB_pro.fas -out ${i%.*}_merops.txt -evalue 1E-5 -outfmt 6 -num_threads 8; done
 ```
-Note: cut-off is set for **E-value 1e-5**. If you want to change it, just modify in the above command.
+Note: cut-off is set for **E-value 1e-5**. If you want to change it, just modify it in the above command.
 
 ### 3.2 Run script that unifies results
 ```
@@ -46,9 +47,10 @@ python 3 virulence_annotation.py /path/to/directory
 ```
 
 ### Output files:
-- counts table with Virulence Factor per genome
+- counts table with virulence factors per genome
 
 ### <a name="references"></a>References
+Liu B, Zheng DD, Jin Q, Chen LH and Yang J, 2019. VFDB 2019: a comparative pathogenomic platform with an interactive web interface. Nucleic Acids Res. 47(D1):D687-D692.
 
 ### <a name="author---contact"></a>How to cite:
 
