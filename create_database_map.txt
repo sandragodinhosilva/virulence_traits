@@ -1,0 +1,45 @@
+#How to create map/database from database file in FASTA format
+
+###############################################################################
+#cat VFDB_setB_pro.fas | grep '>' > VFDB_setB_pro.txt
+
+with open('VFDB_setB_pro.txt', 'r') as file:
+    # read a list of lines into data
+    data = file.readlines()
+    d=[]
+    for line in data:
+        new_line=[]
+        line = line.rstrip() # This removes the whitespace at the end of the line
+        newline = re.sub("\s+", "\t", line) # Now we can replace the whitespace in the lines with tabs, which are easier to work with. 
+        tabs = newline.split("\t") 
+        
+        vf_code = tabs[0].replace(">","")
+
+        short_name = tabs[1].replace("(","").replace(")","")
+
+        desc = " ".join(tabs[2:])
+        tabs2 = desc.split("] [")
+        organism = tabs2[1].replace("]","")
+        tabs3 = tabs2[0].split(" [")
+        
+        short_name2 = tabs3[0]
+        short_name3 =tabs3[1]
+        tabs4 = short_name3.split(" (")
+        try:
+            short_name4 = tabs4[1].replace(")","")#.replace("[","")
+        except:
+            short_name=""
+        
+        new_line.append(vf_code)
+        new_line.append(short_name)
+        new_line.append(desc)
+        new_line.append(organism)
+        new_line.append(short_name2)
+        new_line.append(short_name3)#
+        new_line.append(short_name4)
+        d.append(new_line)
+
+        
+df = pd.DataFrame.from_dict(d)
+#df.columns=["VF","code","desc","name&vfcode","VFcode","Organism"]
+df.to_csv('VF_database_map.csv', index=False)
