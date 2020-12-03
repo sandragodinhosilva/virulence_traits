@@ -28,12 +28,10 @@ gzip -d VFDB_setB_pro.fas.gz
 #Make database:
 makeblastdb -in VFDB_setB_pro.fas -dbtype prot -input_type fasta
 ```
-3) Blastp de todos os genomas versus VFDB. Aqui é necessário escolher o cut-off. Tenho usado um E-value 1e-5 - podemos modificar para o que acharmos mais adequado e até adicionar outros filtros se quisermos (por exemplo só aceitar hits com  bit score >50). 
-4) Obter uma tabela com os resultados.
 
 ## 3. <a name="run"></a>How to run
-### Necessary input:
-Annotated genomes in Faa file.
+**Necessary input:** 
+Annotated genomes (in Faa format) in a single directory.
 
 ### 3.1 Perform a blastp against the database with all genomes
 ```
