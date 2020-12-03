@@ -2,13 +2,13 @@
 A tutorial on how to annotate genomes with virulence factors.
 
 ### Summary
-* [1. Tool description](#tool)
+* [1. Workflow description](#tool)
 * [2. Installation](#installation)
 * [3. How to run](#run)
 * [References](#references)
 * [Author - contact](#author---contact)
 
-## 1. <a name="tool"></a>Tool description
+## 1. <a name="tool"></a>Workflow description
 
 
 
