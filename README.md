@@ -14,13 +14,19 @@ The database in use is the following: http://www.mgc.ac.cn/VFs/main.htm
 
 
 ## 2. <a name="installation"></a>Installation
+**Requirements:**
+* **Conda** \
+The easiest way is to install Miniconda (lightest version): \
+https://docs.conda.io/en/latest/miniconda.html
+
+### 2.1 Create a virtual environment and install necessary packages:
 ```
 conda create -n virulence_analysis
 conda activate virulence_analysis
 conda install -c conda-forge -c bioconda -c defaults prokka
 conda install pandas 
 ```
-### 2.1 Download VFDB database (Faa format) and create local dabase
+### 2.2 Download VFDB database (Faa format) and create local dabase
 ```
 #Download:
 wget http://www.mgc.ac.cn/VFs/Down/VFDB_setB_pro.fas.gz
